@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>桥水</title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <style>
+        body {
+            background-color: #e0f7fa;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            margin: 20px 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+        .header-image {
+            width: 60px; /* 设置头像宽度 */
+            height: 60px; /* 设置头像高度 */
+            border-radius: 50%; /* 圆形头像 */
+            margin-bottom: 20px; /* 图像与标题之间的间距 */
+        }
+        .button {
+            display: flex; /* 使用 flexbox */
+            align-items: center; /* 垂直居中对齐 */
+            background-color: #ffffff;
+            border: 2px solid #007bff;
+            border-radius: 30px;
+            padding: 15px;
+            margin: 10px 0;
+            text-decoration: none;
+            color: #007bff;
+            transition: background-color 0.3s;
+            justify-content: flex-start; /* 左对齐 */
+        }
+        .button:hover {
+            background-color: #007bff;
+            color: white;
+        }
+        .icon {
+            width: 30px;
+            margin-right: 10px; /* 保持图标与文本之间的间距 */
+        }
+        .text {
+            flex: 1; /* 使文本占据剩余空间 */
+            text-align: center; /* 文本居中 */
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #555;
+        }
+        /* 添加晃动效果 */
+        @keyframes shake {
+            0% { transform: translate(0); }
+            25% { transform: translate(-5px); }
+            50% { transform: translate(5px); }
+            75% { transform: translate(-5px); }
+            100% { transform: translate(0); }
+        }
+        .shake {
+            animation: shake 0.5s ease-in-out; /* 动画持续时间和效果 */
+        }
+        /* 提示框样式 */
+        .toast {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            z-index: 1000;
+            transition: opacity 0.5s;
+        }
+    </style>
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast("已复制: " + text);
+            });
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.style.display = 'block';
+            toast.style.opacity = 1;
+
+            setTimeout(() => {
+                toast.style.opacity = 0;
+                setTimeout(() => {
+                    toast.style.display = 'none';
+                }, 500);
+            }, 2000);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <img src="https://vkcdn.vlink.cc/avatar/t028trwj_HyICmrbeNl.jpg?imageView2/1/w/300/h/300" alt="头像" class="header-image"> <!-- 头像 -->
+        <h1>桥水</h1>
+        <a href="#" class="button shake" onclick="copyToClipboard('vfvksk')"> <!-- 复制文本 -->
+            <img src="https://vkcdn.vlink.cc/icon/t028trwj_GJ4CYgJM9u.jpg?v=8" alt="icon" class="icon"> 
+            <span class="text">欧易,币安手续费返佣开通联系钉钉客服</span>
+        </a>
+        <a href="https://www.binance.com/zh-CN/markets/overview" class="button"> <!-- 替换为实际链接 -->
+            <img src="https://vkcdn.vlink.cc/icon/t028trwj_7kbkl5Dy8d.jpg?v=8" alt="icon" class="icon"> 
+            <span class="text">币安|注册完成下载</span>
+        </a>
+        <a href="https://www.okx.com/zh-hans" class="button"> <!-- 替换为实际链接 -->
+            <img src="https://vkcdn.vlink.cc/icon/t028trwj_fszjnGZaQo.jpg?v=8" alt="icon" class="icon"> 
+            <span class="text">欧易|注册完成下载</span>
+        </a>
+        <a href="#" class="button shake" onclick="copyToClipboard('vfvksk')"> <!-- 复制文本 -->
+            <img src="https://vkcdn.vlink.cc/icon/t028trwj_vzuhB6JqfV.jpg?v=8" alt="icon" class="icon"> 
+            <span class="text">苹果ios联系钉钉客服</span>
+        </a>
+        <a href="#" class="button shake" onclick="copyToClipboard('76490038991')"> <!-- 复制文本 -->
+            <img src="https://vkcdn.vlink.cc/icon/t028trwj_-TrKB40hlx.jpg?v=8" alt="icon" class="icon"> 
+            <span class="text">进群入口：搜索钉钉策略群</span>
+        </a>
+        <a href="https://docs.qq.com/doc/DQWdIYmRqVkdScFJn?isNewEmptyDoc=1&electronTabTitle=%E7%A9%BA%E7%99%BD%E6%96%87%E6%A1%A3&no_promotion=1" class="button"> <!-- 现货抄底思路链接 -->
+            <img src="https://vkcdn.vlink.cc/icon/t028trwj_Sc16YPFbYH.jpg?v=8" alt="icon" class="icon"> 
+            <span class="text">现货抄底思路</span>
+        </a>
+    </div>
+    <footer>
+        <p>浏览器打开可正常访问</p>
+    </footer>
+    <div id="toast" class="toast"></div> <!-- 提示框 -->
+</body>
+</html>
